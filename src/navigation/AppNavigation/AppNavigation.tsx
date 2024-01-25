@@ -4,6 +4,7 @@ import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon } from '@ion
 import { Route, Redirect } from 'react-router-dom'
 import { settingsOutline, listOutline } from 'ionicons/icons'
 import { Tasks, Settings } from '../../pages'
+import "./AppNavigation.scss" 
 
 export function AppNavigation() {
   return (

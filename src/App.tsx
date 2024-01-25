@@ -1,5 +1,6 @@
 import { IonApp, setupIonicReact } from '@ionic/react';
 import { AppNavigation } from './navigation'
+import { UserProvider } from './context'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -25,7 +26,9 @@ setupIonicReact();
 const App = () => {
   return(
     <IonApp>
-      <AppNavigation/>
+      <UserProvider>
+        <AppNavigation/>
+      </UserProvider>
     </IonApp>
   )
 };
