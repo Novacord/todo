@@ -1,9 +1,16 @@
-import React from 'react'
+import { IonPage, IonContent } from '@ionic/react'
+import { Avatar, TasksInfo, MenuOptions } from '../components/Profile'
+import './settings.scss'
 
 export function Settings() {
+
   return (
-    <div>
-      <p>Settings</p>
-    </div>
+    <IonPage>
+      <IonContent>
+        <Avatar/>
+        <TasksInfo/>
+        <MenuOptions/>
+      </IonContent>
+    </IonPage>
   )
 }

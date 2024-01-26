@@ -1,10 +1,12 @@
-import React from 'react'
+import { IonPage, IonContent } from '@ionic/react'
 
 export function Tasks() {
   return (
-    <div>
-      <p>Tasks</p>
-    </div>
+    <IonPage>
+      <IonContent>
+        <p>Tareas..</p>
+      </IonContent>
+    </IonPage>
   )
 }
 
