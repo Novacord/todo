@@ -1,12 +1,19 @@
-import React from 'react'
+import { IonIcon } from '@ionic/react'
+import { chevronForwardOutline } from 'ionicons/icons'
+import { OptionTypes } from './option.type'
 import './Option.scss'
 
-export function Option() {
+export function Option(props: OptionTypes.Props) {
+
+    const { title, icon, onclick } = props
+
   return (
-    <div className='option'>
+    <div className='option' onClick={onclick}>
         <div>
-            opcion....
+            <IonIcon icon={icon} />
+            <span>{title}</span>
         </div>
+        <IonIcon icon={chevronForwardOutline} />
     </div>
   )
 }
