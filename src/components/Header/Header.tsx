@@ -7,7 +7,7 @@ export function Header() {
 
     const { avatar } = useUser()
 
-    const {totalTask, totalTaskCompleted } = useTasks()
+    const {totalTask, totalTaskCompleted, openFormTask } = useTasks()
 
     const valueBar = totalTaskCompleted / totalTask
 
@@ -17,7 +17,7 @@ export function Header() {
             <IonAvatar>
                 <img src={avatar} />
             </IonAvatar>
-            <IonIcon icon={addCircleOutline} />
+            <IonIcon icon={addCircleOutline} onClick={openFormTask} />
         </div>
         <div className='progress'>
             <IonText color='dark' className='progress__title'>
