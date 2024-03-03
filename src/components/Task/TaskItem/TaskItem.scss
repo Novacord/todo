@@ -6,12 +6,12 @@
     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
     display: flex;
     align-items: center;
-    justify-content: space-between; // Alinea los elementos horizontalmente
+    justify-content: space-between; 
 
     &__info {
         display: flex;
         flex-direction: column;
-        width: calc(100% - 100px); // Reducimos el ancho para dejar espacio para el botón
+        width: calc(100% - 100px); 
         padding-right: 20px;
 
         span:last-of-type {
