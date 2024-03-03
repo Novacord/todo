@@ -17,4 +17,10 @@ export class Task {
     changeAllTasks(task: TaskModel[]) {
         localStorage.setItem(ENV.LOCAL_STORAGE.TASKS, JSON.stringify(task))
     }
+
+    delete(taskId: string) {
+        let tasks: TaskModel[] = this.obtain();
+        tasks = tasks.filter(task => task.id !== taskId);
+        localStorage.setItem(ENV.LOCAL_STORAGE.TASKS, JSON.stringify(tasks));
+    }
 }

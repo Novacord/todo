@@ -13,6 +13,7 @@ export namespace TasksContextTypes {
         openFormTask: () => void;
         createTask: ( tasks: TaskModel ) => void;
         checkUncheckCompleted: ( id: string, check: boolean ) => void;
+        deleteTask: (taskId: string) => void;
     }
 
 }

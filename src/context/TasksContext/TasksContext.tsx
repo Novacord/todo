@@ -17,6 +17,7 @@ export const TasksContext = createContext<TasksContextTypes.Context>({
   openFormTask: () => {},
   createTask: () => {},
   checkUncheckCompleted: () => {},
+  deleteTask: () => {},
 })
 
 export function TasksProvider( props: TasksContextTypes.Props ) {
@@ -75,6 +76,11 @@ export function TasksProvider( props: TasksContextTypes.Props ) {
       obtainTask()
     }
 
+    const deleteTask = (taskId: string) => {
+      TasksController.delete(taskId);
+      obtainTask();
+    };
+
     const valueContext: TasksContextTypes.Context = {
       totalTask,
       totalTaskCompleted,
@@ -83,6 +89,7 @@ export function TasksProvider( props: TasksContextTypes.Props ) {
       openFormTask,
       createTask,
       checkUncheckCompleted,
+      deleteTask,
     }
 
   return (

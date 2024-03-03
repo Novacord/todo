@@ -17,22 +17,24 @@ export function MenuOptions() {
 
     const closeModal = () => modalRef.current?.dismiss()
 
-    const openCamera = async () => {
+    const openGallery = async () => {
       const response = await Camera.getPhoto({
-        resultType: CameraResultType.Uri,
-        source: CameraSource.Camera,
+        resultType: CameraResultType.DataUrl,
+        source: CameraSource.Photos,
         quality: 100,
-      })
-
-      if(response.webPath){
-        onChangeAvatar(response.webPath)
+      });
+    
+      console.log(response);
+    
+      if (response.dataUrl) {
+        onChangeAvatar(response.dataUrl);
       }
-    }
+    };
 
   return (
     <>
         <div className='menu-options-container'>
-            <Option title='Cambiar avatar' icon={imageOutline} onclick={openCamera}/>
+            <Option title='Cambiar avatar' icon={imageOutline} onclick={openGallery}/>
             <Option title='Cambiar nombre' icon={personCircleOutline} onclick={openChangeName}/>
         </div>
         <IonModal ref={modalRef} trigger='open-modal' initialBreakpoint={0.35} breakpoints={[0, 0.35]}>
